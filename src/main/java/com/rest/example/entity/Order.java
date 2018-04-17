@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.hateoas.ResourceSupport;
-
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -22,6 +20,17 @@ public class Order {
 	private String price;
 	private int quantity;
 	
+	// constructors
+	public Order() {}
+	
+	public Order(long order_Id, String name, String price, int quantity) {
+		super();
+		this.order_Id = order_Id;
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
 	// getters and setters
 
 	public long getOrder_Id() {

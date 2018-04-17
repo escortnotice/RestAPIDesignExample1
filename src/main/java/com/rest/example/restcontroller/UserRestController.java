@@ -58,7 +58,7 @@ public class UserRestController {
 	/**
 	 * Get a specific user based on its id(primary key)
 	 * 
-	 * Content negotiation is implmeneted here based on Accept header sent by the
+	 * Content negotiation is implmeneted here based on "Accept" header sent by the
 	 * client Accept: application/json - will return json response or default is
 	 * json response if no Accept header given Accept: application/xml - will return
 	 * xml response

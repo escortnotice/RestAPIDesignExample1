@@ -27,7 +27,7 @@ public class OrderRestController {
 	@PostMapping
 	@ResponseStatus(value = HttpStatus.CREATED)
 	@ResponseBody
-	public Order createUser(@RequestBody Order order) {
+	public Order createOrder(@RequestBody Order order) {
 		return orderService.addOrder(order);
 	}
 
