@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})  //for resolving error when trying to display data in json format
 @Entity
 @Table(name = "ORDERS")
 public class Order {
@@ -26,6 +29,13 @@ public class Order {
 	public Order(long order_Id, String name, String price, int quantity) {
 		super();
 		this.order_Id = order_Id;
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	
+	public Order(String name, String price, int quantity) {
+		super();
 		this.name = name;
 		this.price = price;
 		this.quantity = quantity;
