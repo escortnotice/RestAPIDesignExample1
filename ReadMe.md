@@ -1,7 +1,7 @@
 The objective of this project is to 
 
-1) Perform TDD while building a rest service
-2) Use Rest best practices
+1) Perform TDD while building a rest service(Unit Test Case, Integration Test)
+2) Use Rest "best" practices
 3) Using HATEOS
 4) Exceptional Handling best practice
 5) rest validation
