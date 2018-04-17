@@ -1,7 +1,6 @@
 package com.rest.example.restcontroller.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +26,18 @@ import com.rest.example.entity.Order;
 import com.rest.example.restcontroller.OrderRestController;
 import com.rest.example.service.OrderService;
 
-@RunWith(SpringRunner.class) // this will load all the spring dependencies
-@WebMvcTest(value = OrderRestController.class, secure = false) // for testing Spring MVC components,
-																// secure = false, will disable any security needed to
-																// call the mvc component
+
+/**
+ * Will load all the spring dependencies
+ */
+@RunWith(SpringRunner.class) 
+/** 
+ * @WebMvcTest annotation is used for unit testing Spring MVC application. 
+ * This can be used when a test focuses only Spring MVC components. 
+ * In this test, we want to launch only StudentController. 
+ * All other controllers and mappings will not be launched when this unit test is executed.
+ **/
+@WebMvcTest(value = OrderRestController.class, secure = false)
 public class OrderRestControllerTest {
 
 	/**
