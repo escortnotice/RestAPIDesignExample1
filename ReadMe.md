@@ -5,6 +5,8 @@ The objective of this project is to
 3) Using HATEOS
 4) Exceptional Handling best practice
 5) rest validation
+6) Caching
+7) swagger for rest api documentation
 
 
 -----------------------------------------------------------
