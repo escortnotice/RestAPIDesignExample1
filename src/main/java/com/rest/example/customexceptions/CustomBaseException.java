@@ -1,6 +1,6 @@
 package com.rest.example.customexceptions;
 
-public class CustomBaseException extends Exception {
+public class CustomBaseException extends Throwable {
 
 	private static final long serialVersionUID = 1L;
 
