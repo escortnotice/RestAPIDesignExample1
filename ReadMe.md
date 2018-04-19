@@ -57,11 +57,33 @@ Sample error:
         "httpMethod": "GET",
         "timestamp": "2018-04-19T11:15:23.372",
         "userMessage": "ORDER was not found for id - 6",
-        "systemError": "javax.persistence.EntityNotFoundException: Unable to find 						com.rest.example.entity.Order with id 6",
+        "systemError": "javax.persistence.EntityNotFoundException: Unable to find com.rest.example.entity.Order with id 6",
         "path": "uri=/orders/6"
     }
 }
 
 -------------------------------------------------------------------------------------
-
+Validation Added and Custom Validation Error message:
+Sample Output:
+{
+    "ApiError": {
+        "httpStatus": "Bad Request",
+        "httpStatusCode": 400,
+        "httpMethod": "POST",
+        "timestamp": "2018-04-19T15:36:13.976",
+        "userMessage": "Validation Failed",
+        "systemError": "Validation Failed",
+        "path": "uri=/orders",
+        "validationCustomError": [
+            {
+                "ValidationCustomError": {
+                    "timestamp": "2018-04-19T15:36:12.581",
+                    "message": "Validation Failed",
+                    "details": "Name should have atleast 2 characters"
+                }
+            }
+        ]
+    }
+}
+--------------------------------------------------------------------------------------
 

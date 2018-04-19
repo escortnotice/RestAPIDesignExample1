@@ -38,8 +38,11 @@ public class ExceptionHandlerAdvice extends ResponseEntityExceptionHandler {
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 		ValidationCustomError customError = new ValidationCustomError("Validation Failed",
-				ex.getBindingResult().getAllErrors().get(0).getDefaultMessage()) ;
-		return new ResponseEntity<>(customError, HttpStatus.BAD_REQUEST);
+				ex.getBindingResult().getAllErrors().get(0).getDefaultMessage());
+		ApiError apiError = new ApiError(HttpStatus.BAD_REQUEST.getReasonPhrase(), HttpStatus.BAD_REQUEST.value(),
+				"POST", "Validation Failed", "Validation Failed", request.getDescription(false));
+		apiError.getValidationCustomError().add(customError);
+		return new ResponseEntity<>(apiError, HttpStatus.BAD_REQUEST);
 	}
 
 }
