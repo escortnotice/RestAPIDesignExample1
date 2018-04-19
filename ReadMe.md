@@ -48,7 +48,6 @@ GET http://localhost:8300/users/8/orders/1
 Get all orders for the user:
 GET http://localhost:8300/users/8/orders
 ------------------------------------------------------------------------------
-
 Exception Handling:
 Sample error:
 {
@@ -64,3 +63,5 @@ Sample error:
 }
 
 -------------------------------------------------------------------------------------
+
+

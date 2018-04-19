@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,7 +21,10 @@ public class Order {
 	@Column(name = "ORDER_ID")
 	private long order_Id;
 	
+	@NotNull
+	@Size(min=2, message="Name should have atleast 2 characters")
 	private String name;
+	
 	private String price;
 	private int quantity;
 	
