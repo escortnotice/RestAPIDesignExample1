@@ -3,10 +3,13 @@ package com.rest.example.service;
 
 import java.util.List;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.rest.example.customexceptions.DataNotFoundException;
 import com.rest.example.entity.Order;
 import com.rest.example.repository.OrderRepository;
 
@@ -22,8 +25,17 @@ public class OrderService {
 	}
 	
 	@Transactional(readOnly = true )
-	public Order getOrder(long id) {
-		return orderRepo.getOne(id);
+	public Order getOrder(long id) throws DataNotFoundException {
+		try {
+			Order order = orderRepo.getOne(id);
+			if(order.getName()!=null)
+				return order;
+			return order;
+		}
+		catch(EntityNotFoundException ex) {
+			throw new DataNotFoundException(Order.class,"id",Long.toString(id),ex);
+		}	
+
 	}
 
 	@Transactional(readOnly = true )

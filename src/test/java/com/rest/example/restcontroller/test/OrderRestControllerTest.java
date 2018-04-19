@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import com.rest.example.customexceptions.DataNotFoundException;
 import com.rest.example.entity.Order;
 import com.rest.example.restcontroller.OrderRestController;
 import com.rest.example.service.OrderService;
@@ -65,7 +66,7 @@ public class OrderRestControllerTest {
 	}
 
 	@Test
-	public void testGetOrder() throws Exception {
+	public void testGetOrder() throws Exception, DataNotFoundException {
 		Mockito.when(orderService.getOrder(Mockito.anyLong())).thenReturn(mockOrder);
 
 		/**

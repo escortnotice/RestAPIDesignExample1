@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.rest.example.customexceptions.DataNotFoundException;
 import com.rest.example.entity.Order;
 import com.rest.example.service.OrderService;
 
@@ -33,7 +34,7 @@ public class OrderRestController {
 
 	@GetMapping(value = "/{id}", produces = { "application/json"})
 	@ResponseStatus(value = HttpStatus.OK)
-	public @ResponseBody Order getOrder(@PathVariable long id) {
+	public @ResponseBody Order getOrder(@PathVariable long id) throws DataNotFoundException {
 		return orderService.getOrder(id);
 
 	}

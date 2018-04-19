@@ -48,3 +48,19 @@ GET http://localhost:8300/users/8/orders/1
 Get all orders for the user:
 GET http://localhost:8300/users/8/orders
 ------------------------------------------------------------------------------
+
+Exception Handling:
+Sample error:
+{
+    "ApiError": {
+        "httpStatus": "Not Found",
+        "httpStatusCode": 404,
+        "httpMethod": "GET",
+        "timestamp": "2018-04-19T11:15:23.372",
+        "userMessage": "ORDER was not found for id - 6",
+        "systemError": "javax.persistence.EntityNotFoundException: Unable to find 						com.rest.example.entity.Order with id 6",
+        "path": "uri=/orders/6"
+    }
+}
+
+-------------------------------------------------------------------------------------
