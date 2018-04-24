@@ -94,4 +94,11 @@ Url for documentation after starting the application :http://localhost:8300/swag
 Added Caching on OrderRestController
 ------------------------------------------------------------------------------------
 
+Added Spring security:
+
+/orders: username:password = user1:secret1
+/users : username:password = admin1:secret1
+
+-------------------------------------------------------------------------------------------
+
 
