@@ -9,7 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	
+
 	// Authentication : User --> Roles
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
